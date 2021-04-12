@@ -288,9 +288,9 @@
                     data-hs-step-form-next-options='{
                     "targetSelector": "#addUserStepBillingAddress"
                   }'>
-                  <span class="step-icon step-icon-soft-dark">2</span>
+                  <span class="step-icon step-icon-soft-dark" onclick="checkpass()">2</span>
                   <div class="step-content">
-                    <span class="step-title">Billing address</span>
+                    <span class="step-title" onclick="checkpass()">Billing address</span>
                   </div>
                 </a>
               </li>
@@ -300,9 +300,9 @@
                     data-hs-step-form-next-options='{
                     "targetSelector": "#addUserStepConfirmation"
                   }'>
-                  <span class="step-icon step-icon-soft-dark">3</span>
+                  <span class="step-icon step-icon-soft-dark" onclick="confirmpage(),checkpass()">3</span>
                   <div class="step-content">
-                    <span class="step-title">Confirmation</span>
+                    <span class="step-title" onclick="confirmpage(),checkpass()">Confirmation</span>
                   </div>
                 </a>
               </li>
@@ -370,7 +370,7 @@
                   </div>
 
                   <div class="row form-group">
-                    <label for="passwordLabel" class="col-sm-3 col-form-label input-label">Password</label>
+                    <label for="passwordLabel" class="col-sm-3 col-form-label input-label">Password <span class="input-label-secondary">(Minimum length 8)</span></label>
 
                     <div class="col-sm-9">
                       <input type="password" class="form-control" name="password" id="passwordLabel" placeholder="Enter password" aria-label="Enter password">
@@ -501,7 +501,7 @@
                         <!-- Custom Radio -->
                         <div class="form-control">
                           <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio1">
+                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio1" value="StoreOwner">
                             <label class="custom-control-label" for="userAccountTypeRadio1">StoreOwner</label>
                           </div>
                         </div>
@@ -510,7 +510,7 @@
                         <!-- Custom Radio -->
                         <div class="form-control">
                           <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio2">
+                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio2" value="Agent">
                             <label class="custom-control-label" for="userAccountTypeRadio2">Agent</label>
                           </div>
                         </div>
@@ -785,7 +785,7 @@
                           <option value="UG" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/ug.svg" alt="Uganda Flag" /><span class="text-truncate">Uganda</span></span>'>Uganda</option>
                           <option value="UA" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/ua.svg" alt="Ukraine Flag" /><span class="text-truncate">Ukraine</span></span>'>Ukraine</option>
                           <option value="AE" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/ae.svg" alt="United Arab Emirates Flag" /><span class="text-truncate">United Arab Emirates</span></span>'>United Arab Emirates</option> -->
-                          <option value="GB" selected data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="United Kingdom Flag" /><span class="text-truncate">United Kingdom</span></span>'>United Kingdom</option>
+                         <!--  <option value="GB" selected data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="United Kingdom Flag" /><span class="text-truncate">United Kingdom</span></span>'>United Kingdom</option> -->
                          <!--  <option value="UM" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/um.svg" alt="United States Minor Outlying Islands Flag" /><span class="text-truncate">United States Minor Outlying Islands</span></span>'>United States Minor Outlying Islands</option> -->
                           <option value="US" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/us.svg" alt="United States of America Flag" /><span class="text-truncate">United States of America</span></span>'>United States of America</option>
                           <!-- <option value="UY" data-option-template='<span class="d-flex align-items-center"><img class="avatar avatar-xss avatar-circle mr-2" src="./assets/vendor/flag-icon-css/flags/1x1/uy.svg" alt="Uruguay Flag" /><span class="text-truncate">Uruguay</span></span>'>Uruguay</option>
@@ -871,7 +871,7 @@
                   </button>
 
                   <div class="ml-auto">
-                    <button type="button" class="btn btn-primary" onclick="confirmpage()" 
+                    <button type="button" class="btn btn-primary" onclick="confirmpage(),checkpass()" 
                             data-hs-step-form-next-options='{
                               "targetSelector": "#addUserStepConfirmation"
                             }'>
@@ -916,7 +916,7 @@
                     <dd class="col-sm-6" id="cn"></dd>
 
                     <dt class="col-sm-6 text-sm-right">Account type:</dt>
-                    <dd class="col-sm-6" id="at">StoreOwner</dd>
+                    <dd class="col-sm-6" id="at"></dd>
 
                     <dt class="col-sm-6 text-sm-right">Country:</dt>
                     <dd class="col-sm-6"><img class="avatar avatar-xss avatar-circle mr-1" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="United States of America Flag"> United States of America</dd>
@@ -966,7 +966,10 @@
 
                 <div class="mb-4">
                   <h2>Successful!</h2>
-                  <p>New <span class="font-weight-bold text-dark">Ella Lauda</span> user has been successfully created.</p>
+                  <p>New <span class="font-weight-bold text-dark" id="usercreated"></span> user has been successfully created.</p>
+                  <script type="text/javascript">
+                    document.getElementById("usercreated").innerHTML = document.getElementById('emailLabel').value;
+                  </script>
                 </div>
 
                 <div class="d-flex justify-content-center">

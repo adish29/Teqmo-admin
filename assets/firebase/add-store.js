@@ -15,8 +15,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 
-function confirmpage(){
-document.getElementById("fn").innerHTML = document.getElementById('firstNameLabel').value + document.getElementById('lastNameLabel').value;
+function confirmpage()
+{
+document.getElementById("fn").innerHTML = document.getElementById('firstNameLabel').value + " " + document.getElementById('lastNameLabel').value;
 document.getElementById("email").innerHTML = document.getElementById('emailLabel').value;
 document.getElementById("phone").innerHTML = document.getElementById('phoneLabel').value;;
 document.getElementById("sn").innerHTML = document.getElementById('organizationLabel').value;
@@ -26,6 +27,9 @@ document.getElementById("state").innerHTML = document.getElementById('stateLabel
 document.getElementById("addr1").innerHTML = document.getElementById('addressLine1Label').value;
 document.getElementById("addr2").innerHTML = document.getElementById('addressLine2Label').value;
 document.getElementById("zc").innerHTML = document.getElementById('zipCodeLabel').value;
+document.getElementById("at").innerHTML = $("input[type='radio'][name='userAccountTypeRadio']:checked").val();
+
+
 }
 
 
@@ -79,3 +83,4 @@ if(password.length<8)
     location.reload();
 }
 }
+
