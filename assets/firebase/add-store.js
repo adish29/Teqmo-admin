@@ -28,6 +28,7 @@ var password =  document.getElementById('passwordLabel').value;
 
 secondaryApp.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
+    $('#successMessageContent').show();
     var user = userCredential.user;
     console.log(user.email)
 
@@ -67,6 +68,7 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorCode,errorMessage)
+    $('#failureMessageContent').show();
 
   });
     
@@ -97,3 +99,4 @@ if($("input[type='radio'][name='userAccountTypeRadio']:checked").val() === 'Stor
                     $('#screens').hide();  
                     }
 }
+
