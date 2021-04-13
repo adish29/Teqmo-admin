@@ -1,20 +1,6 @@
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
-    console.log(user.email + ' is signed in')
-    var userId = user.uid;
-    var email = user.email;
-    // readUserData(userId)
-    // writeUserData(email,userId) ..... function working successfully.
-    
-  } else {
-    console.log('No user is currently signed in')
-    // window.location.href="admin.html"
-  }
-});
 
-
+//updates confirmation page based on user inputs.
 function confirmpage()
 {
 document.getElementById("fn").innerHTML = document.getElementById('firstNameLabel').value + " " + document.getElementById('lastNameLabel').value;
@@ -33,24 +19,23 @@ document.getElementById("at").innerHTML = $("input[type='radio'][name='userAccou
 }
 
 
-
-
-
-
+//Signup using secondary authentication. 
+//Signup using email and password.
 function signUp()
 {
 var email =  document.getElementById('emailLabel').value;
 var password =  document.getElementById('passwordLabel').value;
 if(password.length<8)
 {
-    
+    //user will not be created if password is less than 8 char.
 }
 else{
 secondaryApp.auth().createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
-    // Signed in 
     var user = userCredential.user;
     console.log(user.email)
+
+    //Adding details of new store in database
     var newPostKey = firebase.database().ref().child('Teqmo/' + 'Stores/').push().key;
     var updates = {};
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/OwnerName'] = document.getElementById('firstNameLabel').value;
@@ -62,18 +47,19 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Count'] = '0';
     return firebase.database().ref().update(updates);
 
-   // secondaryApp.auth().signOut();
   })
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
     console.log(errorCode,errorMessage)
-    // ..
+
   });
     
 }
 }
 
+
+//Temperory function to check password length and show an alert.
 function checkpass()
 {
     var password =  document.getElementById('passwordLabel').value;
