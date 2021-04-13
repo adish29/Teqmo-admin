@@ -1,4 +1,4 @@
-//document.getElementById('screenLabel').value
+
 
 //updates confirmation page based on user inputs.
 function confirmpage()
@@ -131,3 +131,27 @@ function storeNameInput()
                     $('#sndt').hide(); 
                     }
 }
+
+
+
+
+//Get downloadURL of a particular image in firebase storage.
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
+
+// Create a storage reference from our storage service
+var storageRef = storage.ref();
+
+storage.ref('img10.jpg').getDownloadURL()
+  .then((url) => {
+    // `url` is the download URL for 'images/stars.jpg'
+    console.log(url)
+   
+
+    // Or inserted into an <img> element
+    var img = document.getElementById('myImg');
+    img.setAttribute('src', url);
+  })
+  .catch((error) => {
+    // Handle any errors
+  });
