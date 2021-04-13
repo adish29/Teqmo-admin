@@ -7,6 +7,7 @@ document.getElementById("fn").innerHTML = document.getElementById('firstNameLabe
 document.getElementById("email").innerHTML = document.getElementById('emailLabel').value;
 document.getElementById("phone").innerHTML = document.getElementById('phoneLabel').value;
 document.getElementById("sn").innerHTML = document.getElementById('storeLabel').value;
+document.getElementById("ns").innerHTML = document.getElementById('screenLabel').value;
 document.getElementById("cn").innerHTML = document.getElementById('companyLabel').value;
 document.getElementById("city").innerHTML = document.getElementById('cityLabel').value;
 document.getElementById("state").innerHTML = document.getElementById('stateLabel').value;
@@ -67,6 +68,7 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     }
     else
     {
+        //Adding branch agents in db
         var newPostKey = firebase.database().ref().child('Teqmo/' + 'Agents/').push().key;
         var updates = {};
         updates['Teqmo/' + 'Agents/' + user.uid] = 'Hello'; 
@@ -104,9 +106,28 @@ function screenDiv()
 if($("input[type='radio'][name='userAccountTypeRadio']:checked").val() === 'StoreOwner')
                     {
                     $('#screens').show();
+                    $('#ns').show();
+                    $('#nsdt').show();
                     } 
                     else {
                     $('#screens').hide();  
+                    $('#ns').hide();
+                    $('#nsdt').hide();
                     }
 }
 
+//function to take input of store name only if the account created is of storeowner
+function storeNameInput()
+{
+    if($("input[type='radio'][name='userAccountTypeRadio']:checked").val() === 'StoreOwner')
+                    {
+                    $('#strName').show();
+                    $('#sn').show();
+                    $('#sndt').show();
+                    } 
+                    else {
+                    $('#strName').hide();  
+                    $('#sn').hide();
+                    $('#sndt').hide(); 
+                    }
+}

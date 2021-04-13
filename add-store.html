@@ -283,7 +283,7 @@
                 </a>
               </li>
 
-              <li class="step-item" onclick="checkpass(),screenDiv()">
+              <li class="step-item" onclick="checkpass()">
                 <a class="step-content-wrapper" href="javascript:;"
                     data-hs-step-form-next-options='{
                     "targetSelector": "#addUserStepBillingAddress"
@@ -295,7 +295,7 @@
                 </a>
               </li>
 
-              <li class="step-item" onclick="confirmpage(),checkpass()">
+              <li class="step-item" onclick="confirmpage(),checkpass(),storeNameInput()">
                 <a class="step-content-wrapper" href="javascript:;"
                     data-hs-step-form-next-options='{
                     "targetSelector": "#addUserStepConfirmation"
@@ -473,7 +473,35 @@
                   <!-- End Add Phone Input Field -->
 
                   <!-- Form Group -->
-                  <div class="row form-group">
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label input-label">Account type</label>
+
+                    <div class="col-sm-9">
+                      <div class="input-group input-group-sm-down-break">
+                        <!-- Custom Radio -->
+                        <div class="form-control">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio1" value="StoreOwner" onclick="storeNameInput(),screenDiv()">
+                            <label class="custom-control-label" for="userAccountTypeRadio1">StoreOwner</label>
+                          </div>
+                        </div>
+                        <!-- End Custom Radio -->
+
+                        <!-- Custom Radio -->
+                        <div class="form-control">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio2" value="Agent" onclick="storeNameInput(),screenDiv()">
+                            <label class="custom-control-label" for="userAccountTypeRadio2">Agent</label>
+                          </div>
+                        </div>
+                        <!-- End Custom Radio -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Form Group -->
+                  <br>
+                  <!-- Form Group -->
+                  <div class="row form-group" style="display: none;" id="strName">
                     <label for="storeLabel" class="col-sm-3 col-form-label input-label">Store Name</label>
 
                     <div class="col-sm-9">
@@ -492,40 +520,14 @@
                   </div>
                   <!-- End Form Group -->
 
-                  <!-- Form Group -->
-                  <div class="row">
-                    <label class="col-sm-3 col-form-label input-label">Account type</label>
-
-                    <div class="col-sm-9">
-                      <div class="input-group input-group-sm-down-break">
-                        <!-- Custom Radio -->
-                        <div class="form-control">
-                          <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio1" value="StoreOwner">
-                            <label class="custom-control-label" for="userAccountTypeRadio1">StoreOwner</label>
-                          </div>
-                        </div>
-                        <!-- End Custom Radio -->
-
-                        <!-- Custom Radio -->
-                        <div class="form-control">
-                          <div class="custom-control custom-radio">
-                            <input type="radio" class="custom-control-input" name="userAccountTypeRadio" id="userAccountTypeRadio2" value="Agent">
-                            <label class="custom-control-label" for="userAccountTypeRadio2">Agent</label>
-                          </div>
-                        </div>
-                        <!-- End Custom Radio -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Form Group -->
+                  
                   
                 </div>
                 <!-- End Body -->
 
                 <!-- Footer -->
                 <div class="card-footer d-flex justify-content-end align-items-center">
-                  <button type="button" class="btn btn-primary" onclick="checkpass(),screenDiv()" 
+                  <button type="button" class="btn btn-primary" onclick="checkpass()" 
                           data-hs-step-form-next-options='{
                             "targetSelector": "#addUserStepBillingAddress"
                           }'>
@@ -881,7 +883,7 @@
                   </button>
 
                   <div class="ml-auto">
-                    <button type="button" class="btn btn-primary" onclick="confirmpage(),checkpass()" 
+                    <button type="button" class="btn btn-primary" onclick="confirmpage(),checkpass(),storeNameInput()" 
                             data-hs-step-form-next-options='{
                               "targetSelector": "#addUserStepConfirmation"
                             }'>
@@ -903,7 +905,9 @@
 
                 <!-- Avatar -->
                 <div class="avatar avatar-xxl avatar-circle avatar-border-lg profile-cover-avatar">
-                  <img class="avatar-img" src="./assets/img/160x160/img9.jpg" alt="Image Description">
+                  <img class="avatar-img" 
+                  src="https://firebasestorage.googleapis.com/v0/b/number-game-446a8.appspot.com/o/img10.jpg?alt=media&token=255c0139-4e89-4aa2-8c7f-0331ae15944e" 
+                  alt="Image Description">
                 </div>
                 <!-- End Avatar -->
 
@@ -919,14 +923,17 @@
                     <dt class="col-sm-6 text-sm-right">Phone:</dt>
                     <dd class="col-sm-6" id="phone"></dd>
 
-                    <dt class="col-sm-6 text-sm-right">Store Name:</dt>
-                    <dd class="col-sm-6" id="sn"></dd>
+                    <dt class="col-sm-6 text-sm-right" style="display: none;" id="sndt">Store Name:</dt>
+                    <dd class="col-sm-6" id="sn" style="display: none;"></dd>
 
                     <dt class="col-sm-6 text-sm-right">Company Name:</dt>
                     <dd class="col-sm-6" id="cn"></dd>
 
                     <dt class="col-sm-6 text-sm-right">Account type:</dt>
                     <dd class="col-sm-6" id="at"></dd>
+
+                    <dt class="col-sm-6 text-sm-right" style="display: none;" id="nsdt">Number of Screens:</dt>
+                    <dd class="col-sm-6" id="ns" style="display: none;"></dd>
 
                     <dt class="col-sm-6 text-sm-right">Country:</dt>
                     <dd class="col-sm-6"><img class="avatar avatar-xss avatar-circle mr-1" src="./assets/vendor/flag-icon-css/flags/1x1/gb.svg" alt="United States of America Flag"> United States of America</dd>
