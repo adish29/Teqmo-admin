@@ -283,26 +283,26 @@
                 </a>
               </li>
 
-              <li class="step-item">
+              <li class="step-item" onclick="checkpass(),screenDiv()">
                 <a class="step-content-wrapper" href="javascript:;"
                     data-hs-step-form-next-options='{
                     "targetSelector": "#addUserStepBillingAddress"
                   }'>
-                  <span class="step-icon step-icon-soft-dark" onclick="checkpass()">2</span>
+                  <span class="step-icon step-icon-soft-dark">2</span>
                   <div class="step-content">
-                    <span class="step-title" onclick="checkpass()">Billing address</span>
+                    <span class="step-title">Other Details</span>
                   </div>
                 </a>
               </li>
 
-              <li class="step-item">
+              <li class="step-item" onclick="confirmpage(),checkpass()">
                 <a class="step-content-wrapper" href="javascript:;"
                     data-hs-step-form-next-options='{
                     "targetSelector": "#addUserStepConfirmation"
                   }'>
-                  <span class="step-icon step-icon-soft-dark" onclick="confirmpage(),checkpass()">3</span>
+                  <span class="step-icon step-icon-soft-dark">3</span>
                   <div class="step-content">
-                    <span class="step-title" onclick="confirmpage(),checkpass()">Confirmation</span>
+                    <span class="step-title">Confirmation</span>
                   </div>
                 </a>
               </li>
@@ -474,20 +474,20 @@
 
                   <!-- Form Group -->
                   <div class="row form-group">
-                    <label for="organizationLabel" class="col-sm-3 col-form-label input-label">Store Name</label>
+                    <label for="storeLabel" class="col-sm-3 col-form-label input-label">Store Name</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="organization" id="organizationLabel" placeholder="Enter the store name" aria-label="Htmlstream">
+                      <input type="text" class="form-control" name="store" id="storeLabel" placeholder="Enter the store name" aria-label="Htmlstream">
                     </div>
                   </div>
                   <!-- End Form Group -->
 
                   <!-- Form Group -->
                   <div class="row form-group">
-                    <label for="departmentLabel" class="col-sm-3 col-form-label input-label">Company Name</label>
+                    <label for="companyLabel" class="col-sm-3 col-form-label input-label">Company Name</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" name="department" id="departmentLabel" placeholder="Enter the company name" aria-label="Human resources">
+                      <input type="text" class="form-control" name="company" id="companyLabel" placeholder="Enter the company name" aria-label="Human resources">
                     </div>
                   </div>
                   <!-- End Form Group -->
@@ -519,12 +519,13 @@
                     </div>
                   </div>
                   <!-- End Form Group -->
+                  
                 </div>
                 <!-- End Body -->
 
                 <!-- Footer -->
                 <div class="card-footer d-flex justify-content-end align-items-center">
-                  <button type="button" class="btn btn-primary" onclick="checkpass()" 
+                  <button type="button" class="btn btn-primary" onclick="checkpass(),screenDiv()" 
                           data-hs-step-form-next-options='{
                             "targetSelector": "#addUserStepBillingAddress"
                           }'>
@@ -538,6 +539,15 @@
               <div id="addUserStepBillingAddress" class="card card-lg" style="display: none;">
                 <!-- Body -->
                 <div class="card-body">
+                  <!-- Form Group -->
+                  <div class="row form-group" style="display: none;" id="screens">
+                    <label for="screenLabel" class="col-sm-3 col-form-label input-label">Number of Screens</label>
+
+                    <div class="col-sm-9">
+                      <input type="number" class="form-control" name="screens" id="screenLabel" placeholder="Enter number of screens" aria-label="Human resources">
+                    </div>
+                  </div>
+                  <!-- End Form Group -->
                   <!-- Form Group -->
                   <div class="row form-group">
                     <label for="locationLabel" class="col-sm-3 col-form-label input-label">Location</label>
