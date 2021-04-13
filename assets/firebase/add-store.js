@@ -5,7 +5,7 @@ function confirmpage()
 {
 document.getElementById("fn").innerHTML = document.getElementById('firstNameLabel').value + " " + document.getElementById('lastNameLabel').value;
 document.getElementById("email").innerHTML = document.getElementById('emailLabel').value;
-document.getElementById("phone").innerHTML = document.getElementById('phoneLabel').value;;
+document.getElementById("phone").innerHTML = document.getElementById('phoneLabel').value;
 document.getElementById("sn").innerHTML = document.getElementById('storeLabel').value;
 document.getElementById("cn").innerHTML = document.getElementById('companyLabel').value;
 document.getElementById("city").innerHTML = document.getElementById('cityLabel').value;
@@ -32,7 +32,9 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     var user = userCredential.user;
     console.log(user.email)
 
-
+    //check whether store owner or agent account is created
+    if($("input[type='radio'][name='userAccountTypeRadio']:checked").val() === 'StoreOwner')
+    {
     //Adding branch details of new store in database
     var newPostKey = firebase.database().ref().child('Teqmo/' + 'Stores/').push().key;
     var updates = {};
@@ -62,6 +64,14 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
      updates['Teqmo/' + 'Stores/' + user.uid + '/Payments/' + 'Weeks'] = 'start';
 
     return firebase.database().ref().update(updates);
+    }
+    else
+    {
+        var newPostKey = firebase.database().ref().child('Teqmo/' + 'Agents/').push().key;
+        var updates = {};
+        updates['Teqmo/' + 'Agents/' + user.uid] = 'Hello'; 
+        return firebase.database().ref().update(updates);
+    }
 
   })
   .catch((error) => {
