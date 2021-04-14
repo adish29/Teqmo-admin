@@ -40,7 +40,7 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     var newPostKey = firebase.database().ref().child('Teqmo/' + 'Stores/').push().key;
     var updates = {};
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/OwnerName'] = 
-    document.getElementById('firstNameLabel').value;
+     document.getElementById('firstNameLabel').value + " " + document.getElementById('lastNameLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/StoreName'] = 
     document.getElementById('storeLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/CompanyName'] = 
@@ -51,6 +51,8 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     document.getElementById('zipCodeLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Phone'] = 
     document.getElementById('phoneLabel').value;
+    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Address'] = 
+    document.getElementById('addressLine1Label').value + " " + document.getElementById('addressLine2Label').value;
     
     //Adding branch screens of new store in database
     var i;
