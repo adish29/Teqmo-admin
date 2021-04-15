@@ -53,6 +53,8 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     document.getElementById('zipCodeLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Phone'] = 
     document.getElementById('phoneLabel').value;
+    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Email'] = 
+    document.getElementById('emailLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Address'] = 
     document.getElementById('addressLine1Label').value + " " + document.getElementById('addressLine2Label').value;
     
@@ -141,21 +143,21 @@ function storeNameInput()
 
 //Get downloadURL of a particular image in firebase storage.
 // Get a reference to the storage service, which is used to create references in your storage bucket
-var storage = firebase.storage();
+// var storage = firebase.storage();
 
-// Create a storage reference from our storage service
-var storageRef = storage.ref();
+// // Create a storage reference from our storage service
+// var storageRef = storage.ref();
 
-storage.ref('img10.jpg').getDownloadURL()
-  .then((url) => {
-    // `url` is the download URL for 'images/stars.jpg'
-    console.log(url)
+// storage.ref('img10.jpg').getDownloadURL()
+//   .then((url) => {
+//     // `url` is the download URL for 'images/stars.jpg'
+//     console.log(url)
    
 
-    // Or inserted into an <img> element
-    var img = document.getElementById('myImg');
-    img.setAttribute('src', url);
-  })
-  .catch((error) => {
-    // Handle any errors
-  });
+//     // Or inserted into an <img> element
+//     var img = document.getElementById('myImg');
+//     img.setAttribute('src', url);
+//   })
+//   .catch((error) => {
+//     // Handle any errors
+//   });
