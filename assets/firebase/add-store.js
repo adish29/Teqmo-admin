@@ -47,6 +47,8 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     document.getElementById('companyLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/State'] = 
     document.getElementById('stateLabel').value;
+    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/City'] = 
+    document.getElementById('cityLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Zipcode'] = 
     document.getElementById('zipCodeLabel').value;
     updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Phone'] = 
