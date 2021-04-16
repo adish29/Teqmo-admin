@@ -291,9 +291,7 @@
 
               <li class="step-item">
                 <a class="step-content-wrapper" href="javascript:;"
-                    data-hs-step-form-next-options='{
-                    "targetSelector": "#addUserStepBillingAddress"
-                  }'>
+                   >
                   <span class="step-icon step-icon-soft-dark">II</span>
                   <div class="step-content">
                     <span class="step-title">Winner List</span>
@@ -321,94 +319,44 @@
               <div id="addUserStepProfile" class="card card-lg active">
                 <!-- Body -->
                 <div class="card-body">
+                    <br>
+                  <h2 align="center">Enter actual Winning Numbers!!<h2>
+                    <br>
+                  
                   <!-- Form Group -->
-                  <!-- <div class="row form-group">
-                    <label class="col-sm-3 col-form-label input-label">Avatar</label>
+                
+                   <!--  <label for="dateLabel" class="col-sm-3 col-form-label input-label">Date</label> -->
 
-                    <div class="col-sm-9">
-                      <div class="d-flex align-items-center"> -->
-                        <!-- Avatar -->
-                        <!-- <label class="avatar avatar-xl avatar-circle avatar-uploader mr-5" for="avatarUploader">
-                          <img id="avatarImg" class="avatar-img" src="./assets/img/160x160/img1.jpg" alt="Image Description">
-
-                          <input type="file" class="js-file-attach avatar-uploader-input" id="avatarUploader"
-                                  data-hs-file-attach-options='{
-                                    "textTarget": "#avatarImg",
-                                    "mode": "image",
-                                    "targetAttr": "src",
-                                    "resetTarget": ".js-file-attach-reset-img",
-                                    "resetImg": "./assets/img/160x160/img1.jpg",
-                                    "allowTypes": [".png", ".jpeg", ".jpg"]
-                                  }'>
-
-                          <span class="avatar-uploader-trigger">
-                            <i class="tio-edit avatar-uploader-icon shadow-soft"></i>
-                          </span>
-                        </label> -->
-                        <!-- End Avatar -->
-
-                       <!--  <button type="button" class="js-file-attach-reset-img btn btn-white">Delete</button>
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- End Form Group -->
-
-                  <!-- Form Group -->
-                  <!-- <div class="row form-group">
-                    <label for="firstNameLabel" class="col-sm-3 col-form-label input-label">Full name <i class="tio-help-outlined text-body ml-1" data-toggle="tooltip" data-placement="top" title="Displayed on public forums, such as Front."></i></label>
-
-                    <div class="col-sm-9">
-                      <div class="input-group input-group-sm-down-break">
-                        <input type="text" class="form-control" name="firstName" id="firstNameLabel" placeholder="First Name" aria-label="Clarice">
-                        <input type="text" class="form-control" name="lastName" id="lastNameLabel" placeholder="Last Name" aria-label="Boone">
-                      </div>
-                    </div>
-                  </div> -->
-                  <!-- End Form Group -->
-
-                  <!-- Form Group -->
-                  <div class="row form-group">
-                    <label for="dateLabel" class="col-sm-3 col-form-label input-label">Date</label>
-
-                    <div class="col-sm-9">
-                     <input type="text" id="dateLabel" class="js-flatpickr form-control flatpickr-custom" placeholder="Select Date"
-      					 data-hs-flatpickr-options='{
-     					   "dateFormat": "m/d/Y"
-    												   }'>
-
-                    </div>
-                  </div>
-
-                  <!-- <div class="row form-group">
-                    <label for="passwordLabel" class="col-sm-3 col-form-label input-label">Shift</label>
-
-                    <div class="col-sm-9"> -->
-                      <!-- <input type="password" class="form-control" name="password" id="passwordLabel" placeholder="Enter password" aria-label="Enter password"> -->
-                     <!--  <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" name="shiftSelect"
+                    <div align="center">
+                     
+                      <select class="js-select2-custom custom-select" size="1" style="opacity: 0;" name="shiftSelect"
                                   data-hs-select2-options='{
                                     "minimumResultsForSearch": "Infinity",
                                     "dropdownAutoWidth": true,
-                                    "width": "10rem"
-                                  }'>
-                              <option value="Morning" selected>Morning</option>
-                              <option value="Afternoon">Afternoon</option>
-                              <option value="Evening">Evening</option> -->
-                              <!-- <option value="Fax">Fax</option>
-                              <option value="Direct">Direct</option> -->
-                       <!--      </select>
-                    </div>
+                                    "width": "15rem"
+                                  }' id="dateSelector">
+                              <option value="" disabled selected hidden>Select Date</option>
+                              <option id="date1"></option>
+                              <option id="date2"></option>
+                              <option id="date3"></option>
+                              <option id="date4"></option>
+                              <option id="date5"></option>
+                              <option id="date6"></option>
+                              <option id="date7"></option>
+                              
+                            </select>
 
-                  </div> -->
+                    </div>
+                 <br>
+
+                 
+              
                 
                   <!-- End Form Group -->
 
                   	
-                      <!--   </div> -->
-
-                  <!-- Form Group -->
-                  <br>
-                  <h2 align="center">Enter actual Winning Numbers!!<h2>
-                    <br>
+                   
+                  
                   <!-- Form Group -->
                   <div class="row">
                     <label class="col-sm-3 col-form-label input-label">Morning Shift</label>
@@ -418,22 +366,18 @@
                         <!-- Custom Radio -->
                         <!-- <div class="form-control"> -->
                           <div class="custom-control">
-                             <input type="number" class="form-control" name="winner" id="morningT3" placeholder="TEQMO3">
-                            <!-- <label class="custom-control-label" for="userAccountTypeRadio1">TEQMO3</label> -->
-                          <!-- </div> -->
+                             <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="winner" id="t1" placeholder="TEQMO3" maxlength="3">
+                           
                         </div>
-                        <!-- End Custom Radio -->
-
-                        <!-- Custom Radio -->
-                        <!-- <div class="form-control"> -->
+                      
                           <div class="custom-control">
-                            <input type="number" class="form-control" name="winner" id="morningT4" placeholder="TEQMO4">
-                            <!-- <label class="custom-control-label" for="userAccountTypeRadio2">TEQMO4</label> -->
+                            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="winner" id="t4" placeholder="TEQMO4" maxlength="4">
+                           
                           </div>
                         </div>
-                        <!-- End Custom Radio -->
+                  
                       </div>
-                   <!--  </div> -->
+            
                   </div>
                   <!-- End Form Group -->
                   <br>
@@ -443,25 +387,20 @@
 
                     <div class="col-sm-9">
                       <div class="input-group input-group-sm-down-break">
-                        <!-- Custom Radio -->
-                        <!-- <div class="form-control"> -->
+                       
                           <div class="custom-control">
-                             <input type="number" class="form-control" name="winner" id="afternoonT3" placeholder="TEQMO3" >
-                            <!-- <label class="custom-control-label" for="userAccountTypeRadio1">TEQMO3</label> -->
-                          <!-- </div> -->
+                             <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="winner" id="t2" placeholder="TEQMO3" maxlength="3" >
+                           
                         </div>
-                        <!-- End Custom Radio -->
-
-                        <!-- Custom Radio -->
-                        <!-- <div class="form-control"> -->
+                       
                           <div class="custom-control">
-                            <input type="number" class="form-control" name="winner" id="afternoonT4" placeholder="TEQMO4">
-                            <!-- <label class="custom-control-label" for="userAccountTypeRadio2">TEQMO4</label> -->
+                            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="winner" id="t5" placeholder="TEQMO4" maxlength="4">
+                           
                           </div>
                         </div>
-                        <!-- End Custom Radio -->
+                       
                       </div>
-                   <!--  </div> -->
+                  
                   </div>
                   <!-- End Form Group -->
                   <br>
@@ -471,79 +410,35 @@
 
                     <div class="col-sm-9">
                       <div class="input-group input-group-sm-down-break">
-                        <!-- Custom Radio -->
-                        <!-- <div class="form-control"> -->
+                       
                           <div class="custom-control">
-                             <input type="number" class="form-control" name="winner" id="eveningT3" placeholder="TEQMO3" >
-                            <!-- <label class="custom-control-label" for="userAccountTypeRadio1">TEQMO3</label> -->
-                          <!-- </div> -->
+                             <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="winner" id="t3" placeholder="TEQMO3" maxlength="3" >
+                          
                         </div>
-                        <!-- End Custom Radio -->
-
-                        <!-- Custom Radio -->
-                        <!-- <div class="form-control"> -->
+                       
                           <div class="custom-control">
-                            <input type="number" class="form-control" name="winner" id="eveningT4" placeholder="TEQMO4">
-                            <!-- <label class="custom-control-label" for="userAccountTypeRadio2">TEQMO4</label> -->
+                            <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="winner" id="t6" placeholder="TEQMO4" maxlength="4">
+                          
                           </div>
                         </div>
-                        <!-- End Custom Radio -->
+                      
                       </div>
-                   <!--  </div> -->
+                  
                   </div>
                   <!-- End Form Group -->
                   <br>
-                  <!-- Form Group -->
-                  <!-- <div class="row form-group" style="display: none;" id="strName">
-                    <label for="storeLabel" class="col-sm-3 col-form-label input-label">Enter winning number</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" name="store" id="storeLabel" placeholder="Enter the winning Number" aria-label="Htmlstream">
-                    </div>
-                  </div>
- -->                  <!-- End Form Group -->
-
-                  <!-- Form Group -->
-             <!--      <div class="row form-group">
-                    <label for="companyLabel" class="col-sm-3 col-form-label input-label">Morning Shift</label>
-
-                    <div class="col-sm-9">
-                      <input type="number" class="form-control" name="winner" id="winnerLabel" placeholder="Enter the Winning Number" aria-label="Human resources">
-                    </div>
-                  </div> -->
-                  <!-- End Form Group -->
-
-                  <!-- Form Group -->
-                <!--   <div class="row form-group">
-                    <label for="companyLabel" class="col-sm-3 col-form-label input-label">Afternoon Shift</label>
-
-                    <div class="col-sm-9">
-                      <input type="number" class="form-control" name="winner" id="winnerLabel" placeholder="Enter the Winning Number" aria-label="Human resources">
-                    </div>
-                  </div> -->
-                  <!-- End Form Group -->
-
-                  <!-- Form Group -->
-                  <!-- <div class="row form-group">
-                    <label for="companyLabel" class="col-sm-3 col-form-label input-label">Evening Shift</label>
-
-                    <div class="col-sm-9">
-                      <input type="number" class="form-control" name="winner" id="winnerLabel" placeholder="Enter the Winning Number" aria-label="Human resources">
-                    </div>
-                  </div> -->
-                  <!-- End Form Group -->
-
                   
                   
                 </div>
                 <!-- End Body -->
 
                 <!-- Footer -->
-                <div class="card-footer d-flex justify-content-end align-items-center">
+                <div class="card-footer d-flex justify-content-center align-items-center">
                   <button type="button" class="btn btn-primary"  
                           data-hs-step-form-next-options='{
                             "targetSelector": "#addUserStepBillingAddress"
-                          }'>
+                          }'
+                          onclick="collectDetails()">
                     Submit<!-- <i class="tio-chevron-right"></i> -->
                   </button>
                 </div>
@@ -666,7 +561,7 @@
               <thead class="thead-light">
                 <tr>
                   <th>Date</th>
-                  <th>Shift</th>
+                  <th>Game</th>
                   <th>Game</th>
                   <th>Store</th>
                   <th>Actual Number</th>
@@ -677,40 +572,58 @@
 
               <tbody id="tableBody">
                 <tr>
-                  <td>Apr 11 2021</td>
-                  <td>Morning</td>
+                  <td id="xyz1"></td>
                   <td>TEQMO3</td>
-                  <td>Bhagyesh's Store</td>
-                  <td>125</td>
-                  <td>521, 215</td>
+                  <td>Morning</td>
+                  <td></td>
+                  <td id="actual1">125</td>
+                  <td></td>
                   <td>2</td>
                 </tr>
                 <tr>
-                  <td>Apr 11 2021</td>
-                  <td>Evening</td>
-                  <td>TEQMO4</td>
-                  <td>Tony Stark's Store</td>
-                  <td>2163</td>
-                  <td>6132, 3621, 1236</td>
-                  <td>3</td>
-                </tr>
-                <tr>
-                  <td>Apr 12 2021</td>
+                  <td id="xyz2"></td>
+                  <td>TEQMO3</td>
                   <td>Afternoon</td>
-                  <td>TEQMO4</td>
-                  <td>Black Widow Store</td>
-                  <td>5468</td>
-                  <td>6458, 8465, 5846</td>
+                  <td></td>
+                  <td id="actual2"></td>
+                  <td></td>
                   <td>3</td>
                 </tr>
                 <tr>
-                  <td>Apr 13 2021</td>
-                  <td>Morning</td>
+                  <td id="xyz3"></td>
+                  <td>TEQMO3</td>
+                  <td>Evening</td>
+                  <td></td>
+                  <td id="actual3"></td>
+                  <td></td>
+                  <td>3</td>
+                </tr>
+                 <tr>
+                  <td id="xyz4"></td>
                   <td>TEQMO4</td>
-                  <td>Wonder Woman Store</td>
-                  <td>349</td>
-                  <td>394</td>
-                  <td>1</td>
+                  <td>Morning</td>
+                  <td></td>
+                  <td id="actual4"></td>
+                  <td></td>
+                  <td>2</td>
+                </tr>
+                 <tr>
+                  <td id="xyz5"></td>
+                  <td>TEQMO4</td>
+                  <td>Afternoon</td>
+                  <td></td>
+                  <td id="actual5"></td>
+                  <td></td>
+                  <td>2</td>
+                </tr>
+                 <tr>
+                  <td id="xyz6"></td>
+                  <td>TEQMO4</td>
+                  <td>Evening</td>
+                  <td></td>
+                  <td id="actual6"></td>
+                  <td></td>
+                  <td>2</td>
                 </tr>
               </tbody>
             </table>
@@ -839,7 +752,7 @@
                 <!-- End Avatar -->
 
                 <!-- Body -->
-                <div class="card-body">
+                <!-- <div class="card-body">
                   <dl class="row">
                     <dt class="col-sm-6 text-sm-right">Full name:</dt>
                     <dd class="col-sm-6" id="fn"></dd>
@@ -879,9 +792,9 @@
 
                     <dt class="col-sm-6 text-sm-right">Zip code:</dt>
                     <dd class="col-sm-6" id="zc"></dd>
-                  </dl>
+                  </dl> -->
                   <!-- End Row -->
-                </div>
+                <!-- </div> -->
                 <!-- End Body -->
 
                 <!-- Footer -->
