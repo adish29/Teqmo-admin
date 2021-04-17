@@ -21,19 +21,19 @@ function readUserData(uid,email)
   const data = snapshot.val();
   // console.log(data.Phone)
   document.getElementById("stateHeader").innerHTML = data.State;
-  document.getElementById("profileName").innerHTML = data.OwnerName;
+  // document.getElementById("profileName").innerHTML = data.OwnerName;
   document.getElementById("name").innerHTML += data.OwnerName;
-  document.getElementById("headerName").innerHTML += data.OwnerName
-  document.getElementById("profileEmail").innerHTML = email;
+  // document.getElementById("headerName").innerHTML += data.OwnerName
+  // document.getElementById("profileEmail").innerHTML = email;
   document.getElementById("email").innerHTML += email;
-  // document.getElementById("storeHeader").innerHTML = data.StoreName;
-  // document.getElementById("store").innerHTML += data.StoreName;
-  // document.getElementById("company").innerHTML += data.CompanyName;
+  // // document.getElementById("storeHeader").innerHTML = data.StoreName;
+  // // document.getElementById("store").innerHTML += data.StoreName;
+  // // document.getElementById("company").innerHTML += data.CompanyName;
   document.getElementById("contact").innerHTML += data.Phone;
   document.getElementById("address").innerHTML += data.Address;
-  // document.getElementById("cityState").innerHTML = data.City + ", " + data.State;
-  // document.getElementById("state").innerHTML = data.State;
-  document.getElementById("zipcode").innerHTML = data.Zipcode;
+  document.getElementById("cityState").innerHTML += data.City + ", " + data.State;
+  // // document.getElementById("state").innerHTML = data.State;
+  document.getElementById("zipcode").innerHTML += data.Zipcode;
 
 
 });
