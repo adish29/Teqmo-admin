@@ -66,9 +66,9 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     }
 
     //Adding branch payments of new store in database
-     updates['Teqmo/' + 'Stores/' + user.uid + '/Payments/' + 'totalCommission'] = 0;
-     updates['Teqmo/' + 'Stores/' + user.uid + '/Payments/' + 'totalSales'] = 0;
-     updates['Teqmo/' + 'Stores/' + user.uid + '/Payments/' + 'Weeks/' + 'Start'] = getWeekNumber(new Date(getFormattedDate(new Date())));
+     updates['Teqmo/' + 'Stores/' + user.uid + '/Payment/' + 'totalCommission'] = 0;
+     updates['Teqmo/' + 'Stores/' + user.uid + '/Payment/' + 'totalSales'] = 0;
+     updates['Teqmo/' + 'Stores/' + user.uid + '/Payment/' + 'Weeks/' + 'Start'] = getWeekNumber(new Date(getFormattedDate(new Date())));
 
     return firebase.database().ref().update(updates);
     }
