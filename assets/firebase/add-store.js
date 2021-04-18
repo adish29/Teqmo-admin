@@ -39,23 +39,23 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     //Adding branch details of new store in database
     var newPostKey = firebase.database().ref().child('Teqmo/' + 'Stores/').push().key;
     var updates = {};
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/OwnerName'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/ownerName'] = 
      document.getElementById('firstNameLabel').value + " " + document.getElementById('lastNameLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/StoreName'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/storeName'] = 
     document.getElementById('storeLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/CompanyName'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/companyName'] = 
     document.getElementById('companyLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/State'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/state'] = 
     document.getElementById('stateLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/City'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/city'] = 
     document.getElementById('cityLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Zipcode'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/zipcode'] = 
     document.getElementById('zipCodeLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Phone'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/phone'] = 
     document.getElementById('phoneLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Email'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/email'] = 
     document.getElementById('emailLabel').value;
-    updates['Teqmo/' + 'Stores/' + user.uid + '/details' + '/Address'] = 
+    updates['Teqmo/' + 'Stores/' + user.uid + '/Details' + '/address'] = 
     document.getElementById('addressLine1Label').value + " " + document.getElementById('addressLine2Label').value;
     
     //Adding branch screens of new store in database
@@ -68,7 +68,7 @@ secondaryApp.auth().createUserWithEmailAndPassword(email, password)
     //Adding branch payments of new store in database
      updates['Teqmo/' + 'Stores/' + user.uid + '/Payment/' + 'totalCommission'] = 0;
      updates['Teqmo/' + 'Stores/' + user.uid + '/Payment/' + 'totalSales'] = 0;
-     updates['Teqmo/' + 'Stores/' + user.uid + '/Payment/' + 'Weeks/' + 'Start'] = getWeekNumber(new Date(getFormattedDate(new Date())));
+     updates['Teqmo/' + 'Stores/' + user.uid + '/Payment/' + 'Weeks/' + 'start'] = getWeekNumber(new Date(getFormattedDate(new Date())));
 
     return firebase.database().ref().update(updates);
     }
